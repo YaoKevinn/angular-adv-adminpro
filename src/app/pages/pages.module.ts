@@ -1,3 +1,5 @@
+import { ComponentsModule } from './../components/components.module';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -26,7 +28,9 @@ import { PagesComponent } from './pages.component';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ComponentsModule,
   ],
 })
 export class PagesModule {}
