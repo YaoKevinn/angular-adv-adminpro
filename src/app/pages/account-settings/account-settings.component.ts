@@ -1,3 +1,5 @@
+import { SettingsService } from './../../services/settings.service';
+import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountSettingsComponent implements OnInit {
 
-  constructor() { }
+
+  constructor( private settingsService:SettingsService ) { }
 
   ngOnInit(): void {
+    this.settingsService.checkCurrentTheme();
   }
+
+  changeTheme( theme: string ) {
+    this.settingsService.changeTheme( theme );
+  }
+
 
 }
