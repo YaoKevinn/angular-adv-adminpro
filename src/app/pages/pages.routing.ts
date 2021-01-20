@@ -1,3 +1,4 @@
+import { RxjsComponent } from './rxjs/rxjs.component';
 import { PromesaComponent } from './promesa/promesa.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,20 +11,41 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 
 const routes: Routes = [
   {
-    path:'dashboard',
+    path: 'dashboard',
     component: PagesComponent,
     children: [
-      { path:'', component: DashboardComponent },
-      { path:'progress', component: ProgressComponent },
-      { path:'grafica1', component: Grafica1Component },
-      { path:'account-settings', component: AccountSettingsComponent },
-      { path:'promesa', component: PromesaComponent }
-    ]
+      {
+        path: '',
+        component: DashboardComponent,
+        data: { titulo: 'Dashboard' },
+      },
+      {
+        path: 'progress',
+        component: ProgressComponent,
+        data: { titulo: 'Progress' },
+      },
+      {
+        path: 'grafica1',
+        component: Grafica1Component,
+        data: { titulo: 'Grafica' },
+      },
+      {
+        path: 'account-settings',
+        component: AccountSettingsComponent,
+        data: { titulo: 'Ajuste de Cuenta' },
+      },
+      {
+        path: 'promesa',
+        component: PromesaComponent,
+        data: { titulo: 'Promesas' },
+      },
+      { path: 'rxjs', component: RxjsComponent, data: { titulo: 'Rxjs' } },
+    ],
   },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forChild(routes) ],
-  exports: [ RouterModule ],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class PagesRoutingModule {}
