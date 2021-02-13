@@ -1,0 +1,70 @@
+<div class="container">
+  <h3 class="card-title">新增分類</h3>
+  <br />
+  <form [formGroup]="transferFG">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>中文名稱</label>
+        <input type="text" class="form-control" formControlName="chName" />
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>英／西文名稱</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="espName"
+          />
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label class="control-label">公司</label>
+        <div class="form-check">
+          <label class="custom-control custom-radio">
+            <input
+              id="radio1"
+              name="company"
+              type="radio"
+              class="custom-control-input purple"
+              formControlName="company"
+              value="gfull"
+            />
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">禾富</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input
+              id="radio2"
+              name="company"
+              type="radio"
+              class="custom-control-input"
+              formControlName="company"
+              value="asia"
+            />
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">東亞</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button mat-stroked-button (click)="closeAddCategoryModal()">上一頁</button>
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="confirmAddProduct()"
+    >
+      <i class="fa fa-check"></i> 新增
+    </button>
+  </div>
+</form>
+</div>

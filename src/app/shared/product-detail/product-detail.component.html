@@ -1,0 +1,24 @@
+<div class="product-dialog">
+  <div class="image-section">
+    <img [src]="product?.image" alt="">
+  </div>
+  <div class="info-product">
+      <div class="up">
+        <p class="product-name">{{ product?.name }}</p>
+        <p class="product-description">{{ product?.description }}</p>
+      </div>
+      <div class="middle">
+        <button mat-mini-fab (click)="quantityBtnClicked('remove')"><mat-icon>remove</mat-icon></button>
+        <p>{{ quantity }}</p>
+        <button mat-mini-fab (click)="quantityBtnClicked('add')"><mat-icon>add</mat-icon></button>
+      </div>
+      <div class="down">
+        <div class="prices">
+          <p>单价 <span class="product-unitPrice">{{ product?.price | currency:"ARS":"$ "}}</span></p>
+          <p>总计 <span class="total">{{ product?.price * quantity | currency:"ARS":"$ "}}</span></p>
+        </div>
+        <button mat-raised-button>加入购物车</button>
+
+      </div>
+  </div>
+</div>

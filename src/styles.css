@@ -8,3 +8,12 @@
 #themecolors .selector {
   cursor: pointer;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.product-dialog {
+  width: 80%;
+  height: auto;
+  overflow-y: auto !important;
+}

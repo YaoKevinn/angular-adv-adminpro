@@ -1,0 +1,17 @@
+<mat-card class="card">
+  <img mat-card-image [src]="product?.image" alt="Photo of a Shiba Inu">
+  <div class="info">
+    <mat-card-header>
+      <mat-card-title class="title">{{ product?.name }}</mat-card-title>
+      <!-- <mat-card-subtitle>{{ product?.productDescription }}</mat-card-subtitle> -->
+    </mat-card-header>
+    <mat-card-content>
+      <p class="unitPrice">
+        {{ product?.price | currency:"ARS":"$ " }}
+      </p>
+    </mat-card-content>
+    <!-- <mat-card-actions class="cart-btn">
+      <button mat-raised-button (click)="openProductDialog()">加入购物车</button>
+    </mat-card-actions> -->
+  </div>
+</mat-card>

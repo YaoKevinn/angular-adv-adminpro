@@ -1,13 +1,12 @@
-import { RxjsComponent } from './rxjs/rxjs.component';
-import { PromesaComponent } from './promesa/promesa.component';
+import { ProductComponent } from './product/product.component';
+import { CategoryComponent } from './category/category.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProgressComponent } from './progress/progress.component';
-import { Grafica1Component } from './grafica1/grafica1.component';
+
 
 const routes: Routes = [
   {
@@ -17,17 +16,7 @@ const routes: Routes = [
       {
         path: '',
         component: DashboardComponent,
-        data: { titulo: 'Dashboard' },
-      },
-      {
-        path: 'progress',
-        component: ProgressComponent,
-        data: { titulo: 'Progress' },
-      },
-      {
-        path: 'grafica1',
-        component: Grafica1Component,
-        data: { titulo: 'Grafica' },
+        data: { titulo: '主控台' },
       },
       {
         path: 'account-settings',
@@ -35,11 +24,15 @@ const routes: Routes = [
         data: { titulo: 'Ajuste de Cuenta' },
       },
       {
-        path: 'promesa',
-        component: PromesaComponent,
-        data: { titulo: 'Promesas' },
+        path: 'category',
+        component: CategoryComponent,
+        data: { titulo: '分類管理' },
       },
-      { path: 'rxjs', component: RxjsComponent, data: { titulo: 'Rxjs' } },
+      {
+        path: 'product',
+        component: ProductComponent,
+        data: { titulo: '商品管理' },
+      },
     ],
   },
 ];

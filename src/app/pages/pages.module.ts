@@ -7,31 +7,35 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProgressComponent } from './progress/progress.component';
-import { Grafica1Component } from './grafica1/grafica1.component';
 import { PagesComponent } from './pages.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { PromesaComponent } from './promesa/promesa.component';
-import { RxjsComponent } from './rxjs/rxjs.component';
+
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { CategoryComponent } from './category/category.component';
+import { ProductComponent } from './product/product.component';
+
+
+
+
+
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    ProgressComponent,
-    Grafica1Component,
     PagesComponent,
     AccountSettingsComponent,
-    PromesaComponent,
-    RxjsComponent
+    CategoryComponent,
+    ProductComponent,
   ],
   exports: [
     DashboardComponent,
-    ProgressComponent,
-    Grafica1Component,
     PagesComponent,
     AccountSettingsComponent,
-    PromesaComponent
    ],
   imports: [
     CommonModule,
@@ -39,6 +43,11 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     RouterModule,
     FormsModule,
     ComponentsModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSlideToggleModule,
   ],
 })
 export class PagesModule {}

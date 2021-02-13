@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagesRoutingModule } from './pages/pages.routing';
 
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 const routes: Routes = [
 

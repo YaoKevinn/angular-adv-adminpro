@@ -1,0 +1,316 @@
+<div class="container">
+  <!-- <h3 class="box-title">新增產品</h3>
+  <hr /> -->
+  <mat-horizontal-stepper labelPosition="bottom" #stepper>
+    <mat-step [stepControl]="transferFG">
+      <ng-template matStepLabel>產品信息</ng-template>
+      <form [formGroup]="transferFG">
+        <mat-form-field style="display: none">
+          <mat-label>Name</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>產品名稱</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="productName"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10">
+            <div class="form-group">
+              <label>產品敘述</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="productDescription"
+              />
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>編號</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="productCode"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">公司</label>
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    id="radio1"
+                    name="company"
+                    type="radio"
+                    class="custom-control-input purple"
+                    formControlName="company"
+                    value="gfull"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">禾富</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input
+                    id="radio2"
+                    name="company"
+                    type="radio"
+                    class="custom-control-input"
+                    formControlName="company"
+                    value="asia"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">東亞</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">特價</label>
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    id="radio3"
+                    name="hotsaleType"
+                    type="radio"
+                    class="custom-control-input"
+                    formControlName="hotsaleType"
+                    value="none"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">無</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input
+                    id="radio4"
+                    name="hotsaleType"
+                    type="radio"
+                    class="custom-control-input"
+                    formControlName="hotsaleType"
+                    value="limited"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">限時</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input
+                    id="radio5"
+                    name="hotsaleType"
+                    type="radio"
+                    class="custom-control-input"
+                    formControlName="hotsaleType"
+                    value="hotsale"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">清倉</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">販賣方式</label>
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    id="radio6"
+                    name="sellType"
+                    type="radio"
+                    class="custom-control-input"
+                    formControlName="sellType"
+                    value="single"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">單個</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input
+                    id="radio7"
+                    name="sellType"
+                    type="radio"
+                    class="custom-control-input"
+                    formControlName="sellType"
+                    value="custom"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">自訂</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>類別</label>
+              <select
+                class="form-control custom-select"
+                formControlName="category"
+              >
+                <option>選擇類別</option>
+                <option>India</option>
+                <option>Sri Lanka</option>
+                <option>USA</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>單位</label>
+              <input type="text" class="form-control" formControlName="unit" />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>單價</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="unitPrice"
+              />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>特價(金額)</label>
+              <input
+                mat-input
+                type="number"
+                class="form-control"
+                formControlName="hotsalePrice"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>折扣數量</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="discountUnit"
+              />
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>折扣價格</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="discountPrice"
+              />
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>折扣數量２</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="discountUnit2"
+              />
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>折扣價格２</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="discountPrice2"
+              />
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>折扣數量３</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="discountUnit3"
+              />
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label>折扣價格３ </label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="discountPrice3"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="outline" color="primary" class="col-md-9">
+            <mat-label>點擊加入圖片(最大50KB)</mat-label>
+            <ngx-mat-file-input formControlName="imgFile"></ngx-mat-file-input>
+            <mat-icon matSuffix>folder</mat-icon>
+          </mat-form-field>
+          <div class="col-md-3">
+            <div class="form-group slide-section">
+              <label>上線</label>
+              <mat-slide-toggle
+                checked
+                color="primary"
+                formControlName="disponibility"
+              ></mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+
+        <div class="buttons-section">
+          <div class="slide-section"></div>
+          <div class="form-actions">
+            <button
+              mat-stroked-button
+              matStepperPrevious
+              class="return-btn"
+              (click)="dialogRef.close()"
+            >
+              返回
+            </button>
+            <button matStepperNext class="btn btn-success">下一頁</button>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>確認產品</ng-template>
+      <p>預覽</p>
+      <app-product
+        [product]="{
+          name: productName.value,
+          price: unitPrice.value,
+          image: imgUrl
+        }"
+      ></app-product>
+      <app-product-detail
+      [product]="{name: productName.value, description: productDescription.value, price: unitPrice.value, image: imgUrl }"></app-product-detail>
+      <div class="form-actions">
+        <button mat-stroked-button matStepperPrevious>上一頁</button>
+        <button
+          type="submit"
+          class="btn btn-success"
+          (click)="confirmAddProduct()"
+        >
+          <i class="fa fa-check"></i> 新增
+        </button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

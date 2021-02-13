@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="title-section">
+            <h4 class="card-title">產品清單</h4>
+            <div class="form-group">
+              <input type="text" class="form-control form-control-line" placeholder="搜尋產品...">
+              <button><mat-icon>search</mat-icon></button>
+            </div>
+            <button mat-mini-fab (click)="openAddProductModal()" ><mat-icon>add</mat-icon></button>
+          </div>
+          <h6 class="card-subtitle"></h6>
+          <div class="table-responsive">
+            <table
+              id="demo-foo-addrow"
+              class="table m-t-30 table-hover contact-list"
+              data-page-size="10"
+            >
+              <thead>
+                <tr>
+                  <th>編號</th>
+                  <th>名稱</th>
+                  <th>描述</th>
+                  <th>單位</th>
+                  <th>單價</th>
+                  <th>存貨</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>T-PU02</td>
+                  <td>
+                    <a href="javascript:void(0)">西红柿汁 12 x 1.02Litro - PURECICA</a>
+                  </td>
+                  <td>Pure De Tomate 12 X 1.02 Litro Purecica</td>
+                  <td>箱</td>
+                  <td>$1512.00</td>
+                  <td><span class="label label-success">Disponible</span></td>
+                </tr>
+                <tr>
+                  <td>R-AR01</td>
+                  <td>
+                    <a href="javascript:void(0)">意大利面 - 螺旋面 (單色) - 12 x 500g包</a>
+                  </td>
+                  <td>Pasta Seca Tirabuson Un Color 12 X 500G</td>
+                  <td>箱</td>
+                  <td>$300.00</td>
+                  <td><span class="label label-danger">Sin stock</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <mat-paginator
+              [length]="100"
+              [pageSize]="15"
+              hidePageSize="true"
+          >
+          </mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
